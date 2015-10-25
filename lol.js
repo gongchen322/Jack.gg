@@ -1,6 +1,7 @@
 var sumName = "";
 var APIKEY = "";
 var sID="";
+var last;
 function summonerLookUp() {   
     sumName = $("#summonerName").val();
     APIKEY = $("#APIKey").val();
@@ -27,7 +28,7 @@ function summonerLookUp() {
                 document.getElementById("sID").innerHTML = summonerID;
 
                 // NEW FUNCTION!
-                letsGetMasteries(summonerID);
+                //letsGetMasteries(summonerID);
                 gameLookUp(summonerID); 
 
             },
@@ -73,10 +74,20 @@ function gameLookUp(summonerID) {
             },
             success: function (json) {
                 
+            for(i=0;i<10;i++){
+                championID = json.games[i].championId;
+                kills = json.games[i].championsKilled;
+                death = json.games[i].numDeaths;
+                assists = json.games[i].assists;
+                win = json.games[i].win;
+                gold = json.games[i].goldEarned;
+                timeSpend = json.games[i].timePlayed;
+                gameType = json.games[i].subType;
+                damageDealt = json.games[i].totalDamageDealt;
 
-                championID = json.games[0].championId;
                 document.getElementById("cID").innerHTML = championID;
-
+            }
+            
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert("error getting Summoner data 1!");
@@ -84,3 +95,27 @@ function gameLookUp(summonerID) {
         });
    
 }
+
+
+function turnBlue(num){
+    var currentLi=$("#l"+num);
+
+    currentLi.addClass('active');
+    if(last){
+        last.removeClass('active');
+        last=currentLi;
+    }
+    else
+      last=currentLi;
+
+}
+
+
+
+
+
+
+
+
+
+

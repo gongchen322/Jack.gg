@@ -2,15 +2,15 @@
 <html>
 
 <head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="library/d3.min.js"></script>
 <style>
-	body{
-	background-image: url('http://www.planwallpaper.com/static/images/518079-background-hd.jpg');  
-}	
+	
 	#x{
 		 text-align: center;
-		 margin-top: 250px;
+		 margin-top: 50px;
 	}
 </style>
 
@@ -29,15 +29,41 @@ DEV KEY
 <br />
 <input id="summonerName" />
 <input type="submit" onclick="summonerLookUp();" />
-<br />
-<br />Summoner Level: <span id="sLevel"></span>
+<div>	
+	<br />
+	<br />Summoner Level: <span id="sLevel"></span> Summoner ID: <span id="sID"></span>
 
-<br />Summoner ID: <span id="sID"></span>
-<br />Champion ID: <span id="cID"></span>
-<br />
-<br /># of Mastery Pages: <span id="masteryPageCount"></span>
+	<br />Champion ID: <span id="cID"></span>
+</div>
+<br>
+<div>	
+	Data Analysis: 
+</div>
 
-<br />First Page's name: <span id="masteryPages1st"></span>
+<br>
+<div>	
+	Game Info:
+	<nav>
+  		<ul class="pagination">
+    	<li>
+      	<a href="#" aria-label="Previous">
+        	<span aria-hidden="true">&laquo;</span>
+      	</a>
+    	</li>
+    		<li id="l1" onclick=turnBlue("1")><a href="#">1</a></li>
+    		<li id="l2" onclick=turnBlue("2")><a href="#">2</a></li>
+    		<li id="l3" onclick=turnBlue("3")><a href="#">3</a></li>
+    		<li id="l4" onclick=turnBlue("4")><a href="#">4</a></li>
+    		<li id="l5" onclick=turnBlue("5")><a href="#">5</a></li>
+    	<li>
+      		<a href="#" aria-label="Next">
+        		<span aria-hidden="true">&raquo;</span>
+      		</a>
+    	</li>
+  		</ul>
+	</nav>
+</div>
+
 </div>
 
 
