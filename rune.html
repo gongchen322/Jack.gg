@@ -3,14 +3,40 @@
 
 <head>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Font+Name">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rancho&effect=fire-animation">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="library/d3.min.js"></script>
 <style>
 	
 	#x{
+		text-align: center;
+		margin-top: 50px;
+		
+		font-size: 15px;
+		line-height: 14px;
+		
+		letter-spacing: 2px;
+		font-weight: bold;
+
+	}
+	#matches{
 		 text-align: center;
-		 margin-top: 50px;
+		 
+	}
+	#pagination{
+		 text-align: center;
+		 
+	}
+	#font1{
+		
+		font-size: 15px;
+		line-height: 14px;
+		
+		letter-spacing: 2px;
+		font-weight: bold;
+
 	}
 </style>
 
@@ -20,7 +46,7 @@
 <script src="lol.js">
 </script>
 
-<div id="x">
+<div  id="x">
 
 DEV KEY
 <br />
@@ -29,19 +55,20 @@ DEV KEY
 <br />
 <input id="summonerName" />
 <input type="submit" onclick="summonerLookUp();" />
-<div>	
+<div class="font-effect-fire-animation" id="font1">	
 	<br />
-	<br />Summoner Level: <span id="sLevel"></span> Summoner ID: <span id="sID"></span>
+	<br />Summoner Level: <span id="sLevel  "></span> 
+	<br>
+	<br />Summoner ID: <span id="  sID"></span>
 
-	<br />Champion ID: <span id="cID"></span>
 </div>
 <br>
 <div>	
 	Data Analysis: 
 </div>
-
 <br>
-<div>	
+</div>
+<div id="pagination">	
 	Game Info:
 	<nav>
   		<ul class="pagination">
@@ -64,7 +91,26 @@ DEV KEY
 	</nav>
 </div>
 
+<div id="matches">
+<img src="http://ddragon.leagueoflegends.com/cdn/5.20.1/img/champion/MasterYi.png" class="img-circle" alt="Cinque Terre" width="75" height="75"> 
+ <div class="list-group">
+    <a href="#" class="list-group-item active">
+      <h4 class="list-group-item-heading">First List Group Item Heading</h4>
+      <p class="list-group-item-text">List Group Item Text</p>
+    </a>
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">Second List Group Item Heading</h4>
+      <p class="list-group-item-text">List Group Item Text</p>
+    </a>
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">Third List Group Item Heading</h4>
+      <p class="list-group-item-text">List Group Item Text</p>
+    </a>
+  </div>
 </div>
+</div>
+
+
 
 
 </body>
