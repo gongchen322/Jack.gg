@@ -20,9 +20,9 @@ module.exports = React.createClass({
                   <li><a href="#">Page 1-3</a></li>
                 </ul>
               </li>
-              <li><a href="rune.html">Check Rune</a></li>
-              <li><a href="map.html">Map</a></li>
-              <li><a href="collision.html">Collision Detection</a></li>
+              <li><a href="html/rune.html">Check Rune</a></li>
+              <li><a href="html/map.html">Map</a></li>
+              <li><a href="html/collision.html">Collision Detection</a></li>
             </ul>
             <ul className="nav navbar-nav navbar-right">
               <li><a href="#"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
