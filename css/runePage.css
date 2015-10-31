@@ -1,0 +1,31 @@
+	#x{
+		text-align: center;
+		margin-top: 50px;
+		
+		font-size: 15px;
+		line-height: 14px;
+		
+		letter-spacing: 2px;
+		font-weight: bold;
+
+	}
+	#matches{
+		 text-align: center;
+		 
+	}
+	#pagination{
+		 text-align: center;
+		 
+	}
+	#font1{
+		
+		font-size: 15px;
+		line-height: 14px;
+		
+		letter-spacing: 2px;
+		font-weight: bold;
+
+	}
+	#list{
+		 color: green;
+		 }
