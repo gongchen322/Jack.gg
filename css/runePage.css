@@ -1,28 +1,28 @@
 	#x{
 		text-align: center;
-		margin-top: 50px;
+		margin-top: 20px;
 		
 		font-size: 15px;
 		line-height: 14px;
 		
 		letter-spacing: 2px;
 		font-weight: bold;
+		
 
 	}
-	#matches{
-		 
-		 
+
+	body{
+		background-image: url('http://backgroundtube.com/wp-content/uploads/2012/08/leagueoflegends.jpg');
 	}
 	table {
-   	width:40%;
+   	width:30%;
     float: left;
-
+    vertical-align: middle;
 	}
-	#table2{
-		margin-left: 100px;
-	}
+	
 	table, th, td {
     border: 1px solid black;
+
 	}
 
 	th,td{
@@ -47,15 +47,16 @@
 
 	#matchStat{
 		background-color:  #7FE817;
-		margin-left: 150px;
-		margin-right:auto;
-		padding-left: 100px;
-		padding-right: auto;
+		margin-left: 250px;
+		margin-right:250px;
+		text-align: center;
 		font-size: 20px;
 		height:100px;
+		visibility: hidden;
 	}
 
 	#championImg{
+		visibility: hidden;
 		float: left;
 		margin-left: 250px;
 		margin-top:auto;

@@ -26,10 +26,10 @@ function summonerLookUp() {
                 
                 document.getElementById("sLevel").innerHTML = summonerLevel;
                 document.getElementById("sID").innerHTML = summonerID;
-
+                //document.getElementById("cID").innerHTML = championID;
                 // NEW FUNCTION!
                 //letsGetMasteries(summonerID);
-                gameLookUp(summonerID); 
+                gameLookUp(summonerID,0); 
 
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -64,7 +64,7 @@ function letsGetMasteries(summonerID) {
     });
 }
 
-function gameLookUp(summonerID) {   
+function gameLookUp(summonerID, i) {   
        
         $.ajax({
             url: 'https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/'+summonerID+'/recent?api_key='+APIKEY,
@@ -74,33 +74,29 @@ function gameLookUp(summonerID) {
 
             },
             success: function (json) {
-                
-            for(i=0;i<10;i++){
+            
                 championID = json.games[i].championId;
                 kills = json.games[i].stats.championsKilled;
                 death = json.games[i].stats.numDeaths;
                 assists = json.games[i].stats.assists;
-                console.log(assists);
                 win = json.games[i].stats.win;
-                console.log(win=='true');
                 gold = json.games[i].stats.goldEarned;
                 timeSpend = json.games[i].stats.timePlayed;
                 gameType = json.games[i].stats.subType;
                 damageDealt = json.games[i].stats.totalDamageDealt;
 
-                document.getElementById("ass").innerHTML = assists;
                 document.getElementById("kill").innerHTML=(typeof kills==='undefined')?'0':kills;
                 document.getElementById("death").innerHTML=(typeof death==='undefined')?'0':death;
                 document.getElementById("assist").innerHTML=assists;
                 document.getElementById("gold").innerHTML=(typeof gold==='undefined')?'0':gold;
                 document.getElementById("damage").innerHTML=(typeof damageDealt==='undefined')?'0':damageDealt;
-                document.getElementById("time").innerHTML=(typeof timeSpend==='undefined')?'0':timeSpend;
+                document.getElementById("time").innerHTML=(typeof timeSpend==='undefined')?'0':Math.floor(timeSpend/60)+"min"+timeSpend%60+"s";
                 $("#matchStat").css("background-color", (win)?'#7FE817':'#FF2400');
+                $("#matchStat").css("visibility", 'visible');
+                $("#championImg").css("visibility", 'visible');
                 championLookUp(championID);
-                break;
+                
 
-            }
-            
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert("error getting Summoner data 1!");
@@ -145,6 +141,9 @@ function turnBlue(num){
     }
     else
       last=currentLi;
+  var cID=document.getElementById("sID").innerHTML;
+  console.log(cID);
+  gameLookUp(cID,num-1);
 
 }
 
