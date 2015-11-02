@@ -10,8 +10,23 @@
 
 	}
 	#matches{
-		 text-align: center;
 		 
+		 
+	}
+	table {
+   	width:40%;
+    float: left;
+
+	}
+	#table2{
+		margin-left: 100px;
+	}
+	table, th, td {
+    border: 1px solid black;
+	}
+
+	th,td{
+		height:50px;
 	}
 	#pagination{
 		 text-align: center;
@@ -29,3 +44,20 @@
 	#list{
 		 color: green;
 		 }
+
+	#matchStat{
+		background-color:  #7FE817;
+		margin-left: 150px;
+		margin-right:auto;
+		padding-left: 100px;
+		padding-right: auto;
+		font-size: 20px;
+		height:100px;
+	}
+
+	#championImg{
+		float: left;
+		margin-left: 250px;
+		margin-top:auto;
+		margin-bottom: auto;
+	}
