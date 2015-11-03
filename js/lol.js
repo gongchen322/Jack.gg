@@ -82,7 +82,7 @@ function gameLookUp(summonerID, i) {
                 win = json.games[i].stats.win;
                 gold = json.games[i].stats.goldEarned;
                 timeSpend = json.games[i].stats.timePlayed;
-                gameType = json.games[i].stats.subType;
+                gameType = json.games[i].subType;
                 damageDealt = json.games[i].stats.totalDamageDealt;
 
                 document.getElementById("kill").innerHTML=(typeof kills==='undefined')?'0':kills;
@@ -90,6 +90,7 @@ function gameLookUp(summonerID, i) {
                 document.getElementById("assist").innerHTML=assists;
                 document.getElementById("gold").innerHTML=(typeof gold==='undefined')?'0':gold;
                 document.getElementById("damage").innerHTML=(typeof damageDealt==='undefined')?'0':damageDealt;
+                document.getElementById("type").innerHTML=(typeof gameType==='undefined')?'0':gameType;
                 document.getElementById("time").innerHTML=(typeof timeSpend==='undefined')?'0':Math.floor(timeSpend/60)+"min"+timeSpend%60+"s";
                 $("#matchStat").css("background-color", (win)?'#7FE817':'#FF2400');
                 $("#matchStat").css("visibility", 'visible');

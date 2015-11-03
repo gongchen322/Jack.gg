@@ -15,9 +15,8 @@
 		background-image: url('http://backgroundtube.com/wp-content/uploads/2012/08/leagueoflegends.jpg');
 	}
 	table {
-   	width:30%;
-    float: left;
-    vertical-align: middle;
+    width:40%;
+    
 	}
 	
 	table, th, td {
@@ -47,18 +46,18 @@
 
 	#matchStat{
 		background-color:  #7FE817;
-		margin-left: 250px;
-		margin-right:250px;
-		text-align: center;
+		margin-left: auto;
+		margin-right:auto;
+		width:40%;
 		font-size: 20px;
-		height:100px;
+		
 		visibility: hidden;
 	}
 
 	#championImg{
 		visibility: hidden;
 		float: left;
-		margin-left: 250px;
+		margin-left: 500px;
 		margin-top:auto;
 		margin-bottom: auto;
 	}
