@@ -21,7 +21,7 @@ module.exports = React.createClass({
                 </ul>
               </li>
               <li><a href="html/rune.html">Check Rune</a></li>
-              <li><a href="html/map.html">Map</a></li>
+              <li><a href="#">Map</a></li>
               <li><a href="html/collision.html">Collision Detection</a></li>
             </ul>
             <ul className="nav navbar-nav navbar-right">
