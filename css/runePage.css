@@ -29,8 +29,8 @@
 
 	#pagination{
 		 text-align: center;
-		 
 	}
+
 	#font1{
 		font-size: 15px;
 		line-height: 14px;
@@ -45,6 +45,7 @@
 		background-color:  #7FE817;
 		margin-left: auto;
 		margin-right:auto;
+		margin-top: 20px;
 		width:38%;
 		height:auto;
 		font-size: 20px;

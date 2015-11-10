@@ -1,10 +1,6 @@
 var Sequelize = require('sequelize');
 
-var sequelize = new Sequelize('usrpwd', 'dbuser', 'dbpassword', {
-  host: 'localhost', //mysql host name
-  dialect: "sqlite",
-  port: 3306 //default mysql port
-});
+var sequelize = new Sequelize('sqlite://jackgg.sqlite');
 
 sequelize
   .authenticate()
@@ -19,13 +15,16 @@ var User = sequelize.define(
   {
     firstName: { type: Sequelize.STRING },
     lastName: { type: Sequelize.STRING },
+    SummonerID: { type: Sequelize.STRING },
     password: { type: Sequelize.STRING },
     email: { type: Sequelize.STRING }
   }
-);
+); 
+
+User.sync();
 
 var Game = sequelize.define(
-  'User',
+  'Game',
   {
     SummonerID: { type: Sequelize.STRING },
     SummonerName: { type: Sequelize.STRING },
@@ -37,9 +36,11 @@ var Game = sequelize.define(
     time: { type: Sequelize.STRING },
     gametype: { type: Sequelize.STRING },
     SummonerID: { type: Sequelize.STRING },
-    SummonerName: { type: Sequelize.STRING },
+    SummonerName: { type: Sequelize.STRING }
   }
 );
+
+
 
 sequelize
   .sync({ force: true })
@@ -49,3 +50,28 @@ sequelize
     console.log('An error occurred while creating the table:', err);
   });
 
+ User = User.create({
+    firstName: 'foo',
+    lastName: 'bar',
+    SummonerID: 'aa',
+    password: 'aa',
+    email: 'aa'
+  });
+ 
+/*
+  function saveGame(obj){
+    var game = Game.build({
+    SummonerID: obj. ,
+    SummonerName: obj. ,
+    kill: obj. ,
+    death: obj. ,
+    assist: obj. ,
+    gold: obj. ,
+    damage: obj. ,
+    time: obj. ,
+    gametype: obj. ,
+    SummonerID: obj. ,
+    SummonerName: obj. ,
+  });
+  */
+exports.User = User;

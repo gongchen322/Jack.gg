@@ -2,6 +2,7 @@ var sumName = "";
 var APIKEY = "";
 var sID="";
 var last;
+var Game=require('../db.js');
 function summonerLookUp() {   
     sumName = $("#summonerName").val();
     //APIKEY = $("#APIKey").val();
@@ -87,7 +88,7 @@ function gameLookUp(summonerID, i) {
 
                 document.getElementById("kill").innerHTML=(typeof kills==='undefined')?'0':kills;
                 document.getElementById("death").innerHTML=(typeof death==='undefined')?'0':death;
-                document.getElementById("assist").innerHTML=assists;
+                document.getElementById("assist").innerHTML=(typeof assists==='undefined')?'0':assists;
                 document.getElementById("gold").innerHTML=(typeof gold==='undefined')?'0':gold;
                 document.getElementById("damage").innerHTML=(typeof damageDealt==='undefined')?'0':damageDealt;
                 document.getElementById("type").innerHTML=(typeof gameType==='undefined')?'0':gameType;
@@ -142,12 +143,28 @@ function turnBlue(num){
     }
     else
       last=currentLi;
-  var cID=document.getElementById("sID").innerHTML;
-  console.log(cID);
-  gameLookUp(cID,num-1);
+  var sID=document.getElementById("sID").innerHTML;
+  gameLookUp(sID,num-1);
 
 }
 
+
+function saveGame(){
+    var sID=document.getElementById("sID").innerHTML;
+    var kill=document.getElementById("kill").innerHTML;
+    var death=document.getElementById("death").innerHTML;
+    var assist=document.getElementById("assist").innerHTML;
+    var gold=document.getElementById("gold").innerHTML;
+    var damage=document.getElementById("damage").innerHTML;
+    var type=document.getElementById("type").innerHTML;
+    var time=document.getElementById("time").innerHTML;
+   Game.create({
+   firstName: 'foo',
+   lastName: 'bar',
+   password: 'asdfasdf',
+   numberOfPets: 0
+ });
+}
 
 
 
