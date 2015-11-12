@@ -21,7 +21,6 @@ var User = sequelize.define(
   }
 ); 
 
-User.sync();
 
 var Game = sequelize.define(
   'Game',
@@ -41,23 +40,6 @@ var Game = sequelize.define(
 );
 
 
-
-sequelize
-  .sync({ force: true })
-  .then(function(err) {
-    console.log('It worked!');
-  }, function (err) { 
-    console.log('An error occurred while creating the table:', err);
-  });
-
- User = User.create({
-    firstName: 'foo',
-    lastName: 'bar',
-    SummonerID: 'aa',
-    password: 'aa',
-    email: 'aa'
-  });
- 
 /*
   function saveGame(obj){
     var game = Game.build({
@@ -75,3 +57,4 @@ sequelize
   });
   */
 exports.User = User;
+exports.Game = Game;

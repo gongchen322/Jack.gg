@@ -1,8 +1,27 @@
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize('sqlite://test.sqlite');
+var Game = sequelize.define(
+  'Game',
+  {
+    SummonerID: { type: Sequelize.STRING },
+    SummonerName: { type: Sequelize.STRING },
+    kill: { type: Sequelize.INTEGER },
+    death: { type: Sequelize.INTEGER },
+    assist: { type: Sequelize.INTEGER },
+    gold: { type: Sequelize.INTEGER },
+    damage: { type: Sequelize.INTEGER },
+    time: { type: Sequelize.STRING },
+    gametype: { type: Sequelize.STRING },
+    SummonerID: { type: Sequelize.STRING },
+    SummonerName: { type: Sequelize.STRING }
+  }
+);
+
 var sumName = "";
 var APIKEY = "";
 var sID="";
 var last;
-var Game=require('../db.js');
+
 function summonerLookUp() {   
     sumName = $("#summonerName").val();
     //APIKEY = $("#APIKey").val();
@@ -158,12 +177,23 @@ function saveGame(){
     var damage=document.getElementById("damage").innerHTML;
     var type=document.getElementById("type").innerHTML;
     var time=document.getElementById("time").innerHTML;
-   Game.create({
-   firstName: 'foo',
-   lastName: 'bar',
-   password: 'asdfasdf',
-   numberOfPets: 0
- });
+ Game
+  .sync()
+  .then(function () {
+    Game.create({
+    SummonerID: sID,
+    kill: kill,
+    death: death,
+    assist: assist,
+    gold: gold,
+    damage: damege,
+    time: time,
+    gametype: type
+    });
+  })
+  .then(function (e) {
+    console.log('Something went wrong!', e)
+  });
 }
 
 
