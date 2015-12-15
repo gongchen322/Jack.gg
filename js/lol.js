@@ -138,7 +138,9 @@ function championLookUp(championID) {
             },
             success: function (json) {
                 name=json.name;
+                name=name.split(' ').join('');
                 url="http://ddragon.leagueoflegends.com/cdn/5.20.1/img/champion/"+name+".png";
+                alert(url);
                 document.getElementById("championImg1").setAttribute('src', url);
             },
             
